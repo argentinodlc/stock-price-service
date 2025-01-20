@@ -46,7 +46,7 @@ public class FinnhubWebSocketHandler extends TextWebSocketHandler {
 
     @Override
     public void handleTextMessage(WebSocketSession session, TextMessage message) {
-        LOG.info("Received message: {}", message.getPayload());
+        LOG.debug("Received message: {}", message.getPayload());
         eventPublisher.publishEvent(new StockPriceEvent(this, message.getPayload()));
     }
 
