@@ -1,0 +1,26 @@
+spring:
+
+  application:
+    name: price-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/stock_price
+    username: postgres
+    password: 123
+
+  jpa:
+    hibernate:
+      jdbc:
+        lob:
+          non_contextual_creation: true
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: update
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    template:
+      default-topic: stock-price-updated
+
+finnhub:
+  api-key: ${FINNHUB_API_KEY}
+
