@@ -1,19 +1,7 @@
 # Stock Price Service
 
-## Overview
-
 The Stock Price Service is a microservice designed to monitor stock prices in real-time. 
 It connects to the Finnhub WebSocket API to receive stock price updates and publishes these updates to a Kafka topic.
-
-## Project Structure
-
-The project is structured as follows:
-- `client`: Contains the logic to connect to the Finnhub WebSocket API.
-- `config`: Contains the application configuration to connect to Kafka and the client.
-- `event`: Contains the event classes to represent an entry received from the Finnhub WebSocket API.
-- `model`: Contains the model classes to represent the stock price, ticker, and trade data.
-- `repository`: Contains the repository class to retrieve the monitored tickers from the database.
-- `service`: Contains the main processing logic to handle the stock price updates and publish them to Kafka.
 
 ## Prerequisites
 
@@ -62,6 +50,16 @@ CREATE TABLE ticker (
 Ensure that Kafka is running and accessible at the address specified in `bootstrap-servers`. 
 The default topic for publishing messages is `stock-price-updated`, but you can change it as needed.
 
+## Project Structure
+
+The project is structured as follows:
+- `client`: Contains the logic to connect to the Finnhub WebSocket API.
+- `config`: Contains the application configuration to connect to Kafka and the client.
+- `event`: Contains the event classes to represent an entry received from the Finnhub WebSocket API.
+- `model`: Contains the model classes to represent the stock price, ticker, and trade data.
+- `repository`: Contains the repository class to retrieve the monitored tickers from the database.
+- `service`: Contains the main processing logic to handle the stock price updates and publish them to Kafka.
+  
 ## Usage
 
 To run the application, use the following command:
